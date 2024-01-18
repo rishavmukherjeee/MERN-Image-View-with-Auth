@@ -11,7 +11,9 @@ app.use(express.json());
 
 app.use(cors())
 app.use("/api/v1", mainRouter);
-
+app.get("/", (req, res) => {
+    res.send("Server is up and running");
+});
 const port = process.env.PORT || 3000;
 
 const start = async () => {
