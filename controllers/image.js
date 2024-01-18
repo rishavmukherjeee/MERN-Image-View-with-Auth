@@ -9,7 +9,6 @@ cloudinary.config({
 
 
   const upload = async (req, res) => {
-    console.log("image upload called");
     try {
       const result = await cloudinary.uploader.upload_stream({ resource_type: 'raw' }, async (error, result) => {
         if (error) throw new Error(error);
@@ -29,7 +28,6 @@ cloudinary.config({
 
 // GET all images
 const images= async (req, res) => {
-    console.log("image get called");
   try {
     const images = await Image.find();
     res.json(images);
@@ -40,7 +38,6 @@ const images= async (req, res) => {
 
 // PUT add view to image
 const view= async (req, res) => {
-    console.log("image view called");
   try {
     const image = await Image.findById(req.params.id);
     if (!image) {

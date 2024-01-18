@@ -24,7 +24,7 @@ router.route("/images/:id").put(view);
 const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
     params: {
-      folder: 'some_folder_name',
+      folder: 'Images',
       format: async (req, file) => 'png', // supports promises as well
       public_id: (req, file) => file.originalname
     },
@@ -34,8 +34,6 @@ const storage = new CloudinaryStorage({
   
   router.post('/images', parser.single('image'), async (req, res) => {
     try {
-      console.log(req.body);
-      console.log(req.file);
       const image = new Image({
         url: req.file.path,
         views: 0,

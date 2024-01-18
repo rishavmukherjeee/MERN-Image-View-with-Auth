@@ -10,10 +10,12 @@ const ImageSchema = new mongoose.Schema({
     default: 0
   },
   title:{
-    type: String
+    type: String,
+    default: "Untitled"
   },
   description:{
-    type: String
+    type: String,
+    default: "No description"
   }
   
 });
