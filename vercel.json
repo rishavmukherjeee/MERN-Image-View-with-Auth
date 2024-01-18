@@ -1,0 +1,17 @@
+{
+    "version": 2,
+    "name": "MERN-Auth-ImageView",
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/$1"
+      }
+    ]
+  }
+  
