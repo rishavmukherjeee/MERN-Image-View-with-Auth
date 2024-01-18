@@ -34,6 +34,8 @@ const storage = new CloudinaryStorage({
   
   router.post('/images', parser.single('image'), async (req, res) => {
     try {
+      console.log(req.body);
+      console.log(req.file);
       const image = new Image({
         url: req.file.path,
         views: 0,
