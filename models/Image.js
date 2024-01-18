@@ -8,7 +8,14 @@ const ImageSchema = new mongoose.Schema({
   views: {
     type: Number,
     default: 0
+  },
+  title:{
+    type: String
+  },
+  description:{
+    type: String
   }
+  
 });
 
 module.exports = mongoose.model('Image', ImageSchema);

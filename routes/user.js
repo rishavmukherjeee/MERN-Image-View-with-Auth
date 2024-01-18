@@ -36,7 +36,9 @@ const storage = new CloudinaryStorage({
     try {
       const image = new Image({
         url: req.file.path,
-        views: 0
+        views: 0,
+        title: req.body.title,
+        description: req.body.description
       });
       await image.save();
       res.json(image);
