@@ -48,6 +48,7 @@ const getAllUsers = async (req, res) => {
 };
 
 const register = async (req, res) => {
+  console.log(req.body);
   let foundUser = await User.findOne({ email: req.body.email });
   if (foundUser === null) {
     let { username, email, password } = req.body;
